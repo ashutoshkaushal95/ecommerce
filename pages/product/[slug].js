@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { client, urlFor } from '../../lib/client';
 
 const ProductDetails = ({ product, products }) => {
@@ -45,7 +45,9 @@ export const getStaticProps = async ({ params: { slug }}) => {
   
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
-  
+
+  console.log(product);
+
   return {
     props: { products, product }
   }
